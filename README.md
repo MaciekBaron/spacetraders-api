@@ -1,6 +1,6 @@
 ## spacetraders-api@2.0.0
 
-This generator creates TypeScript/JavaScript client that utilizes [axios](https://github.com/axios/axios). The generated Node module can be used in the following environments:
+A [SpaceTraders](https://spacetraders.io/) SDK utilising [axios](https://github.com/axios/axios), auto-generated using the [OpenAPI definition](https://docs.spacetraders.io/api-guide/open-api-spec). The generated Node module can be used in the following environments:
 
 Environment
 * Node.js
@@ -17,32 +17,12 @@ Module system
 
 It can be used in both TypeScript and JavaScript. In TypeScript, the definition should be automatically resolved via `package.json`. ([Reference](http://www.typescriptlang.org/docs/handbook/typings-for-npm-packages.html))
 
-### Building
+### Installation
 
-To build and compile the typescript sources to javascript use:
-```
-npm install
-npm run build
-```
-
-### Publishing
-
-First build the package then run ```npm publish```
-
-### Consuming
-
-navigate to the folder of your consuming project and run one of the following commands.
-
-_published:_
+Navigate to the folder of your consuming project and run the following command:
 
 ```
-npm install spacetraders-api@2.0.0 --save
-```
-
-_unPublished (not recommended):_
-
-```
-npm install PATH_TO_GENERATED_PACKAGE --save
+npm install spacetraders-api axios@0.27.2 --save
 ```
 
 ### Usage
@@ -66,4 +46,12 @@ const system = new SystemsApi(configuration, undefined, instance);
 
 const systems = await system.getSystems();
 console.log(systems.data);
+```
+
+### Building
+
+To build and compile the typescript sources to javascript use:
+```
+npm install
+npm run build
 ```

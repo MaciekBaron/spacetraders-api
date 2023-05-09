@@ -43,3 +43,27 @@ _unPublished (not recommended):_
 
 ```
 npm install PATH_TO_GENERATED_PACKAGE --save
+```
+
+### Usage
+
+Here's an example using the SDK:
+```ts
+import axios from 'axios';
+import {
+  Configuration,
+  SystemsApi
+} from 'spacetraders-api';
+
+const configuration = new Configuration({
+  basePath: process.env.BASE_PATH,
+  accessToken: process.env.ACCESS_TOKEN,
+});
+
+const instance = axios.create({});
+
+const system = new SystemsApi(configuration, undefined, instance);
+
+const systems = await system.getSystems();
+console.log(systems.data);
+```
